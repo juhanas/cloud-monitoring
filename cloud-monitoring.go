@@ -13,7 +13,7 @@ func main() {
     go influxdb.InfluxDB(
         r, // metrics registry
         time.Second,        // interval
-        "http://192.168.99.100:32403", // the InfluxDB url ** Insert the url here **
+        "http://192.168.99.100:30955", // the InfluxDB url ** Insert the url here **
         "data",                  // your InfluxDB database
         "root",                // your InfluxDB user
         "root",            // your InfluxDB password

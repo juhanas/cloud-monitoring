@@ -5,5 +5,5 @@ echo Getting IP address for the container
 ip=$(minikube service influxdb --url)
 echo IP: $ip
 echo Initializing tables
-echo Creating table mydb
-curl -i -XPOST $ip/query --data-urlencode "q=CREATE DATABASE mydb"
+echo Creating table data
+curl -i -XPOST $ip/query --data-urlencode "q=CREATE DATABASE data"
