@@ -31,37 +31,44 @@ Scripts
 -----
 ### database-add-user
 Gives the user access to the database
-```./database-add-user.sh [adminName] [adminPassword] [username] [databaseName] [privileges: read|write|all] [databaseIP]
+```
+./database-add-user.sh [adminName] [adminPassword] [username] [databaseName] [privileges: read|write|all] [databaseIP]
 ```
 
 ### database-create
 Creates a new database
-```./database-create.sh [adminName] [adminPassword] [databaseName] [databaseIP]
+```
+./database-create.sh [adminName] [adminPassword] [databaseName] [databaseIP]
 ```
 
 ### database-revoke-user
 Removes privileges from the user
-```./database-revoke-user.sh [adminName] [adminPassword] [username] [databaseName] [privilegeToRevoke: read|write|all] [databaseIP]
+```
+./database-revoke-user.sh [adminName] [adminPassword] [username] [databaseName] [privilegeToRevoke: read|write|all] [databaseIP]
 ```
 
 ### delete-all
 Deletes all Influxdb and Grafana instances from Minikube
-```./delete-all.sh
+```
+./delete-all.sh
 ```
 
 ### install.sh
 Installs the Influxdb and Grafana instances on Minikube
-```./install [adminName] [adminPassword] [defaultDatabaseName] [grafanaAdminPassword]
+```
+./install [adminName] [adminPassword] [defaultDatabaseName] [grafanaAdminPassword]
 ```
 
 ### user-add
 Creates a new normal user with the given password
-```./user-create.sh [adminName] [adminPassword] [username] [password] [databaseIP]
+```
+./user-create.sh [adminName] [adminPassword] [username] [password] [databaseIP]
 ```
 
 ### user-drop
 Removes the given user
-```./user-drop.sh [adminName] [adminPassword] [username] [databaseIP]
+```
+./user-drop.sh [adminName] [adminPassword] [username] [databaseIP]
 ```
 
 License
