@@ -19,12 +19,14 @@ Next, open Grafana on your browser (user admin, password as specified in scripts
 Usage
 -----
 Data can be added to Influxdb via the http API. To test the connection, a go-script is provided. Build and run it as usual, giving the required parameters:
-```go build && ./cloud-monitoring [influxdb IP address] [database name] [username] [password]
+```
+go build && ./cloud-monitoring [influxdb IP address] [database name] [username] [password]
 ```
 The script will run until stopped (Ctrl+C), adding values to the database every second.
 
 To see the values posted by the go-script, add a graph to a dashboard in Grafana, select the correct data source and use query:
-```SELECT "value" FROM "measurement.count";
+```
+SELECT "value" FROM "measurement.count";
 ```
 
 Scripts
