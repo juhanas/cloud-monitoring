@@ -5,18 +5,22 @@ import (
   "github.com/vrischmann/go-metrics-influxdb"
   "time"
   "math/rand"
+  "os"
 )
 
 func main() {
+  if (len(os.Args) < 5) {
+    return;
+  }
     r := metrics.NewRegistry()
 
     go influxdb.InfluxDB(
         r, // metrics registry
-        time.Second,        // interval
-        "http://192.168.99.100:30955", // the InfluxDB url ** Insert the url here **
-        "data",                  // your InfluxDB database
-        "root",                // your InfluxDB user
-        "root",            // your InfluxDB password
+        time.Second,  // interval
+        os.Args[1],   // InfluxDB url from first command line argument
+        os.Args[2],   // InfluxDB database
+        os.Args[3],   // InfluxDB user
+        os.Args[4],   // InfluxDB password
     )
 
     c := metrics.NewCounter()

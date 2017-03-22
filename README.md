@@ -3,7 +3,7 @@ cloud-monitoring
 
 Cloud-based monitoring for business metrics using [Kubernetes](http://kubernetes.io/), [Minikube](https://github.com/kubernetes/minikube), [Influxdb](https://docs.influxdata.com/influxdb/v1.2/) and [Grafana](http://grafana.org/).
 
-Furthermore, a go-script is provided for testing the system.
+[Go](https://golang.org/)-script is provided for testing the system.
 
 Requirements
 -----
@@ -12,14 +12,57 @@ Requirements
 
 Installation
 -----
-Start minikube, then run the install.sh script in the scripts- folder. This will install Indluxdb and Grafana on the VM, display the urls for the database and grafana, and create the database 'data' on Influxdb.
+Start minikube with `minikube start` then run the install.sh script in the scripts-folder. This will install Indluxdb and Grafana on the VM, create admin user and database for Influxdb as well as display the url for the database and Grafana.
 
-Next, open Grafana on your browser, sign in (default user and password: admin, admin) and add Influxdb as the data source. Default user and password: root, root. Database used by the go-script: data.
+Next, open Grafana on your browser (user admin, password as specified in scripts) and add Influxdb as the data source.
 
 Usage
 -----
-Data can be added to Influxdb using the HTTP API. To test the connection, a go-script is provided. Add the database url to it, then build and run it as usual: go build && ./cloud-monitoring. The script will run until stopped (Ctrl+C), adding values to the database every second.
-To see the values in Grafana, add a graph to a dashboard with query: SELECT "value" FROM "measurement.count";
+Data can be added to Influxdb via the http API. To test the connection, a go-script is provided. Build and run it as usual, giving the required parameters:
+```go build && ./cloud-monitoring [influxdb IP address] [database name] [username] [password]
+```
+The script will run until stopped (Ctrl+C), adding values to the database every second.
+
+To see the values posted by the go-script, add a graph to a dashboard in Grafana, select the correct data source and use query:
+```SELECT "value" FROM "measurement.count";
+```
+
+Scripts
+-----
+### database-add-user
+Gives the user access to the database
+```./database-add-user.sh [adminName] [adminPassword] [username] [databaseName] [privileges: read|write|all] [databaseIP]
+```
+
+### database-create
+Creates a new database
+```./database-create.sh [adminName] [adminPassword] [databaseName] [databaseIP]
+```
+
+### database-revoke-user
+Removes privileges from the user
+```./database-revoke-user.sh [adminName] [adminPassword] [username] [databaseName] [privilegeToRevoke: read|write|all] [databaseIP]
+```
+
+### delete-all
+Deletes all Influxdb and Grafana instances from Minikube
+```./delete-all.sh
+```
+
+### install.sh
+Installs the Influxdb and Grafana instances on Minikube
+```./install [adminName] [adminPassword] [defaultDatabaseName] [grafanaAdminPassword]
+```
+
+### user-add
+Creates a new normal user with the given password
+```./user-create.sh [adminName] [adminPassword] [username] [password] [databaseIP]
+```
+
+### user-drop
+Removes the given user
+```./user-drop.sh [adminName] [adminPassword] [username] [databaseIP]
+```
 
 License
 -----
