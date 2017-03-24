@@ -24,10 +24,7 @@ go build && ./cloud-monitoring [influxdb IP address] [database name] [username] 
 ```
 The script will run until stopped (Ctrl+C), adding values to the database every second.
 
-To see the values posted by the go-script, add a graph to a dashboard in Grafana, select the correct data source and use query:
-```
-SELECT "value" FROM "measurement.count";
-```
+To see the values posted by the go-script, an example Grafana dashboard is provided. Import exampleDashboard.json to grafana and select the correct data source.
 
 Scripts
 -----
