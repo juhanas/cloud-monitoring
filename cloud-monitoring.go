@@ -6,6 +6,7 @@ import (
   "time"
   "math/rand"
   "os"
+  "fmt"
 )
 
 func counterFunction(counter metrics.Counter, timeDelay time.Duration) {
@@ -19,6 +20,7 @@ func counterFunction(counter metrics.Counter, timeDelay time.Duration) {
 
 func main() {
   if (len(os.Args) < 5) {
+    fmt.Println("Required arguments: influxdb url, databasename, dbUsername, dbPassword")
     return;
   }
     r := metrics.NewRegistry()
