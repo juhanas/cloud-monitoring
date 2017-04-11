@@ -1,0 +1,170 @@
+{
+  "general": {
+    "databaseName": "InfluxDB",
+    "dashboardName": "Dashboard 1",
+    "timeRange": "now/d",
+    "refresh": "5s"
+  },
+  "graphs": [
+    {
+      "title": "Amount of songs listened to",
+      "row": 2,
+      "column": 2,
+      "width": 6,
+      "variables": [
+        {
+          "identifier": "A",
+          "name": "Song 1",
+          "valueName": "value",
+          "measurement": "song1.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "B",
+          "name": "Song 2",
+          "valueName": "value",
+          "measurement": "song2.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "C",
+          "name": "Song 3",
+          "valueName": "value",
+          "measurement": "song3.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "D",
+          "name": "Song 4",
+          "valueName": "value",
+          "measurement": "song4.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "E",
+          "name": "Song 5",
+          "valueName": "value",
+          "measurement": "song5.count",
+          "format": "time_series"
+        }
+      ]
+    },
+    {
+      "title": "Amount of songs listened to2",
+      "width": 6,
+      "row": 2,
+      "column": 1,
+      "variables": [
+        {
+          "identifier": "A",
+          "name": "Song 1",
+          "valueName": "value",
+          "measurement": "song1.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "B",
+          "name": "Song 2",
+          "valueName": "value",
+          "measurement": "song2.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "C",
+          "name": "Song 3",
+          "valueName": "value",
+          "measurement": "song3.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "D",
+          "name": "Song 4",
+          "valueName": "value",
+          "measurement": "song4.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "E",
+          "name": "Song 5",
+          "valueName": "value",
+          "measurement": "song5.count",
+          "format": "time_series"
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "title": "Amount of songs listened to",
+      "width": 6,
+      "row": 1,
+      "column": 2,
+      "variables": [
+        {
+          "identifier": "A",
+          "name": "Song 1",
+          "valueName": "value",
+          "measurement": "song1.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "B",
+          "name": "Song 2",
+          "valueName": "value",
+          "measurement": "song2.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "C",
+          "name": "Song 3",
+          "valueName": "value",
+          "measurement": "song3.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "D",
+          "name": "Song 4",
+          "valueName": "value",
+          "measurement": "song4.count",
+          "format": "time_series"
+        },
+        {
+          "identifier": "E",
+          "name": "Song 5",
+          "valueName": "value",
+          "measurement": "song5.count",
+          "format": "time_series"
+        }
+      ]
+    }
+  ],
+  "gauges": [
+    {
+      "title": "Requests per second",
+      "type": "singlestat",
+      "width": 4,
+      "row": 1,
+      "column": 1,
+      "minValue": 0,
+      "maxValue": 100,
+      "threshold1": 50,
+      "threshold2": 70,
+      "colors": [
+        "rgba(5, 142, 0, 0.97)",
+        "rgba(237, 129, 40, 0.89)",
+        "rgba(245, 54, 54, 0.9)"
+      ],
+      "fillColor": "rgba(31, 118, 189, 0.18)",
+      "lineColor": "rgb(31, 120, 193)",
+      "variables": [
+        {
+          "identifier": "A",
+          "name": "Requests",
+          "valueName": "value",
+          "measurement": "song11.gauge",
+          "format": "time_series"
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@ cloud-monitoring
 
 Cloud-based monitoring for business metrics using [Kubernetes](http://kubernetes.io/), [Minikube](https://github.com/kubernetes/minikube), [Influxdb](https://docs.influxdata.com/influxdb/v1.2/) and [Grafana](http://grafana.org/).
 
-[Go](https://golang.org/)-script is provided for testing the system.
+[Go](https://golang.org/)-scripts are provided for testing the system or generating dashboards from a template.
 
 Requirements
 -----
@@ -25,6 +25,24 @@ go build && ./cloud-monitoring [influxdb IP address] [database name] [username] 
 The script will run until stopped (Ctrl+C), adding values to the database every second.
 
 To see the values posted by the go-script, an example Grafana dashboard is provided. Import exampleDashboard.json to grafana and select the correct data source.
+
+Dashboard Generation
+-----
+Custom Dashboards can be generated using the provided script. Start by filling out the definitions.json- file. Next, run the script
+```
+go build && ./dashboardGeneration
+```
+This will generate a dashboardName.json file, which can be imported to Grafana.
+
+### Troubleshooting
+If Grafana is not accepting the generated file, the definitions-file most likely has errors.
+Check at least the following:
+- All the required fields have been entered correctly
+- Row and Column numbers are correct
+⋅⋅* They should start from 1, and not skip numbers
+- The widths are correct
+⋅⋅* Each element can have a width of 1-12
+⋅⋅* The total width for all elements in a row can not exceed 12
 
 Scripts
 -----
