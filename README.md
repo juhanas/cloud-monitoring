@@ -39,7 +39,7 @@ If Grafana is not accepting the generated file, the definitions-file most likely
 Check at least the following:
 - All the required fields have been entered correctly
 - Row and Column numbers are correct
-⋅⋅* They should start from 1, and not skip numbers
+  * They should start from 1, and not skip numbers
 - The widths are correct
   * Each element can have a width of 1-12
   * The total width for all elements in a row can not exceed 12
