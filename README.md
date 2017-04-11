@@ -41,8 +41,8 @@ Check at least the following:
 - Row and Column numbers are correct
 ⋅⋅* They should start from 1, and not skip numbers
 - The widths are correct
-⋅⋅* Each element can have a width of 1-12
-⋅⋅* The total width for all elements in a row can not exceed 12
+  * Each element can have a width of 1-12
+  * The total width for all elements in a row can not exceed 12
 
 Scripts
 -----
