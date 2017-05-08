@@ -2,48 +2,48 @@
   "general": {
     "databaseName": "InfluxDB",
     "dashboardName": "Dashboard 1",
-    "timeRange": "now/d",
+    "timeRange": "now-5m",
     "refresh": "5s"
   },
   "graphs": [
     {
       "title": "Amount of songs listened to",
-      "row": 2,
-      "column": 2,
+      "row": 3,
+      "column": 1,
       "width": 6,
       "variables": [
         {
           "identifier": "A",
           "name": "Song 1",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song1.count",
           "format": "time_series"
         },
         {
           "identifier": "B",
           "name": "Song 2",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song2.count",
           "format": "time_series"
         },
         {
           "identifier": "C",
           "name": "Song 3",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song3.count",
           "format": "time_series"
         },
         {
           "identifier": "D",
           "name": "Song 4",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song4.count",
           "format": "time_series"
         },
         {
           "identifier": "E",
           "name": "Song 5",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song5.count",
           "format": "time_series"
         }
@@ -58,35 +58,35 @@
         {
           "identifier": "A",
           "name": "Song 1",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song1.count",
           "format": "time_series"
         },
         {
           "identifier": "B",
           "name": "Song 2",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song2.count",
           "format": "time_series"
         },
         {
           "identifier": "C",
           "name": "Song 3",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song3.count",
           "format": "time_series"
         },
         {
           "identifier": "D",
           "name": "Song 4",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song4.count",
           "format": "time_series"
         },
         {
           "identifier": "E",
           "name": "Song 5",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song5.count",
           "format": "time_series"
         }
@@ -95,44 +95,172 @@
   ],
   "tables": [
     {
-      "title": "Amount of songs listened to",
+      "title": "Histogram",
       "width": 6,
       "row": 1,
       "column": 2,
       "variables": [
         {
           "identifier": "A",
-          "name": "Song 1",
-          "valueName": "value",
-          "measurement": "song1.count",
+          "name": "sum",
+          "valueName": "sum",
+          "measurement": "song12.histogram",
           "format": "time_series"
         },
         {
           "identifier": "B",
-          "name": "Song 2",
-          "valueName": "value",
-          "measurement": "song2.count",
+          "name": "min",
+          "valueName": "min",
+          "measurement": "song12.histogram",
           "format": "time_series"
         },
         {
           "identifier": "C",
-          "name": "Song 3",
-          "valueName": "value",
-          "measurement": "song3.count",
+          "name": "max",
+          "valueName": "max",
+          "measurement": "song12.histogram",
           "format": "time_series"
         },
         {
           "identifier": "D",
-          "name": "Song 4",
-          "valueName": "value",
-          "measurement": "song4.count",
+          "name": "variance",
+          "valueName": "variance",
+          "measurement": "song12.histogram",
           "format": "time_series"
         },
         {
           "identifier": "E",
-          "name": "Song 5",
-          "valueName": "value",
-          "measurement": "song5.count",
+          "name": "mean",
+          "valueName": "mean",
+          "measurement": "song12.histogram",
+          "format": "time_series"
+        },
+        {
+          "identifier": "F",
+          "name": "median",
+          "valueName": "median",
+          "measurement": "song12.histogram",
+          "format": "time_series"
+        },
+        {
+          "identifier": "G",
+          "name": "count",
+          "valueName": "count",
+          "measurement": "song12.histogram",
+          "format": "time_series"
+        }
+      ]
+    },
+    {
+      "title": "Meter",
+      "width": 6,
+      "row": 2,
+      "column": 2,
+      "variables": [
+        {
+          "identifier": "A",
+          "name": "count",
+          "valueName": "count",
+          "measurement": "song13.meter",
+          "format": "time_series"
+        },
+        {
+          "identifier": "B",
+          "name": "one-minute",
+          "valueName": "one-minute",
+          "measurement": "song13.meter",
+          "format": "time_series"
+        },
+        {
+          "identifier": "C",
+          "name": "five-minute",
+          "valueName": "five-minute",
+          "measurement": "song13.meter",
+          "format": "time_series"
+        },
+        {
+          "identifier": "D",
+          "name": "fifteen-minute",
+          "valueName": "fifteen-minute",
+          "measurement": "song13.meter",
+          "format": "time_series"
+        },
+        {
+          "identifier": "E",
+          "name": "mean-rate",
+          "valueName": "mean-rate",
+          "measurement": "song13.meter",
+          "format": "time_series"
+        }
+      ]
+    },
+    {
+      "title": "Timer",
+      "width": 6,
+      "row": 3,
+      "column": 2,
+      "variables": [
+        {
+          "identifier": "A",
+          "name": "count",
+          "valueName": "count",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "B",
+          "name": "one-minute",
+          "valueName": "one-minute",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "C",
+          "name": "five-minute",
+          "valueName": "five-minute",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "D",
+          "name": "fifteen-minute",
+          "valueName": "fifteen-minute",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "E",
+          "name": "mean-rate",
+          "valueName": "mean-rate",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "F",
+          "name": "max",
+          "valueName": "max",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "G",
+          "name": "min",
+          "valueName": "min",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "H",
+          "name": "median",
+          "valueName": "median",
+          "measurement": "song14.timer",
+          "format": "time_series"
+        },
+        {
+          "identifier": "I",
+          "name": "sum",
+          "valueName": "sum",
+          "measurement": "song14.timer",
           "format": "time_series"
         }
       ]
@@ -160,7 +288,7 @@
         {
           "identifier": "A",
           "name": "Requests",
-          "valueName": "value",
+          "valueName": "count",
           "measurement": "song11.gauge",
           "format": "time_series"
         }

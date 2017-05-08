@@ -8,7 +8,7 @@ Cloud-based monitoring for business metrics using [Kubernetes](http://kubernetes
 Requirements
 -----
 [Minikube](https://github.com/kubernetes/minikube) must be installed in order to run the monitoring.
-[GoLang](https://golang.org/) is needed to run the provided test script.
+[GoLang](https://golang.org/) or [Node.js](https://nodejs.org) is needed to run the provided test script.
 
 Installation
 -----
@@ -18,19 +18,22 @@ Next, open Grafana on your browser (user admin, password as specified in scripts
 
 Usage
 -----
-Data can be added to Influxdb via the http API. To test the connection, a go-script is provided. Build and run it as usual, giving the required parameters:
+Data can be added to Influxdb via the http API. To test the connection, go- and nodejs- scripts are provided. Build and run one of them as usual, giving the required parameters:
 ```
-go build && ./cloud-monitoring [influxdb IP address] [database name] [username] [password]
+go build && ./go-script [influxdb IP address] [database name] [username] [password]
 ```
-The script will run until stopped (Ctrl+C), adding values to the database every second.
+```
+npm install && node index.js [influxdb IP address] [influxdb port] [database name] [username] [password]
+```
+The script will run until stopped (Ctrl+C), adding values to the database every 1-5 seconds.
 
-To see the values posted by the go-script, an example Grafana dashboard is provided. Import exampleDashboard.json to grafana and select the correct data source.
+To see the values posted by the script, an example Grafana dashboard is provided for each script. Import Dashboard[Go/Node].json to Grafana and select the correct data source.
 
 Dashboard Generation
 -----
 Custom Dashboards can be generated using the provided script. Start by filling out the definitions.json- file. Next, run the script
 ```
-go build && ./dashboardGeneration
+go build && ./generateDashboard
 ```
 This will generate a dashboardName.json file, which can be imported to Grafana.
 

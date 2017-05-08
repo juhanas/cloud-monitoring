@@ -1,0 +1,10 @@
+{
+  "name": "metrics-influx-filler",
+  "version": "0.0.1",
+  "description": "A test script for sending metrics to InfluxDB",
+  "main": "index.js",
+  "dependencies": {
+    "influx": "^5.0.0-alpha.4",
+    "metrics-influx": "^0.0.1"
+  }
+}
