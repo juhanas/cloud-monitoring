@@ -3,22 +3,31 @@ cloud-monitoring
 
 Cloud-based monitoring for business metrics using [Kubernetes](http://kubernetes.io/), [Minikube](https://github.com/kubernetes/minikube), [Influxdb](https://docs.influxdata.com/influxdb/v1.2/) and [Grafana](http://grafana.org/).
 
-[Go](https://golang.org/)-scripts are provided for testing the system or generating dashboards from a template.
+[Go](https://golang.org/)- and [Node.js](https://nodejs.org)-scripts are provided for testing the system. Dashboards can be generated from a template with another go-script.
 
 Requirements
 -----
-[Minikube](https://github.com/kubernetes/minikube) must be installed in order to run the monitoring.
+[Minikube](https://github.com/kubernetes/minikube) must be installed in order to run the monitoring locally. The tool can also be used in a cloud environment. Instructions are provided for AWS.
 [GoLang](https://golang.org/) or [Node.js](https://nodejs.org) is needed to run the provided test script.
 
 Installation
 -----
-Start minikube with `minikube start` then run the install.sh script in the scripts-folder. This will install Indluxdb and Grafana on the VM, create admin user and database for Influxdb as well as display the url for the database and Grafana.
 
-Next, open Grafana on your browser (user admin, password as specified in scripts) and add Influxdb as the data source.
+### Local
+Start minikube with `minikube start` then run the install.sh- script in the scripts-folder. This will install Indluxdb and Grafana on the VM, create admin user and database for Influxdb as well as display the url for the database and Grafana.
+
+Next, open Grafana on your browser (user and password as specified in the scripts) and add Influxdb as the data source. Finally, create a new Dashboard or upload the generated file (see below).
+
+### Cloud (AWS)
+
+Install a server with Kubernetes. See for example Heptio's [Quick start quide](https://aws.amazon.com/quickstart/architecture/heptio-kubernetes/).
+SSH to the server and run the install.sh- script in the scripts/aws-folder. The script will output the public ip-addresses for the Influxdb and Grafana instances.
+
+Next, open Grafana on your browser (user and password as specified in the scripts) and add Influxdb as the data source. Finally, create a new Dashboard or upload the generated file (see below).
 
 Usage
 -----
-Data can be added to Influxdb via the http API. To test the connection, go- and nodejs- scripts are provided. Build and run one of them as usual, giving the required parameters:
+Data can be added to Influxdb via the http API. To test the connection, go- and node.js- scripts are provided. Build and run one of them as usual, giving the required parameters:
 ```
 go build && ./go-script [influxdb IP address] [database name] [username] [password]
 ```
