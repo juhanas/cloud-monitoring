@@ -88,6 +88,12 @@ Installs the Influxdb and Grafana instances on Minikube
 ./install [adminName] [adminPassword] [defaultDatabaseName] [grafanaAdminPassword]
 ```
 
+### aws/install.sh
+Installs the Influxdb and Grafana instances on AWS
+```
+./install [adminName] [adminPassword] [defaultDatabaseName] [grafanaAdminPassword]
+```
+
 ### user-add
 Creates a new normal user with the given password
 ```
